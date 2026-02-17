@@ -66,6 +66,18 @@ CREATE DATABASE airport_pooling;
 bash
 python -m uvicorn app.main:app --reload
 
+## Performance Considerations
+
+The system is designed to support high concurrency using:
+
+- Stateless FastAPI services
+- Horizontal scalability via multiple backend instances
+- Indexed database queries
+- Row-level locking for safe concurrent ride assignment
+
+The lightweight ride assignment logic allows the system to handle high request throughput with low latency.
+
+
 ## Server Access
 Backend server runs at:
 http://127.0.0.1:8000
